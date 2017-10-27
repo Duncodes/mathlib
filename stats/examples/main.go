@@ -7,12 +7,12 @@ import (
 )
 
 func main() {
-	data := stats.Data{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+	data := stats.Data{3, 3, 5, 5, 4}
 
 	mean, _ := data.Mean()
 	median, _ := data.Median()
 	mode, _ := data.Mode()
-	variance, _ := data.Variance()
+	variance, _ := data.SampleVariance()
 	std, _ := data.StandardDeviation()
 
 	s, _ := stats.Sstd(data)
@@ -30,7 +30,7 @@ func main() {
 	fmt.Println("StandardDeviation Sample", s)
 
 	d, _ := data.SampleZscore(6)
-	d1, _ := data.Zscore(6)
+	d1, _ := data.Zscore(4)
 
 	fmt.Println("Sample ZScore ", d)
 	fmt.Println("ZScore ", d1)

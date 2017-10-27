@@ -2,7 +2,9 @@ package stats
 
 import (
 	"math"
+	"math/rand"
 	"sort"
+	"time"
 )
 
 func sortCopy(data Data) Data {
@@ -59,4 +61,22 @@ func Sum(d Data) (sum float64) {
 
 	return sum
 
+}
+
+// Samples Data randomly and returns a new Data
+func Sample(d Data, lenght int) (Data, error) {
+	l := d.Len()
+	if l < lenght {
+		return nil, SampleSize
+	}
+
+	sample := Data{}
+
+	rand.Seed(time.Now().UTC().UnixNano())
+	for i := 0; i < lenght; i++ {
+		idx := rand.Intn(l)
+		sample = append(sample, d[idx])
+	}
+
+	return sample, nil
 }
