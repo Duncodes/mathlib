@@ -21,16 +21,16 @@ func TestStandardDeviation(t *testing.T) {
 
 	// short
 
-	v, _ = Sstd(data)
+	v, _ = Ssdev(data)
 
 	if v != 3.0276503540974917 {
-		t.Errorf("SampleStandardDeviation(data) returned %f but expected %f ", v, 3.0276503540974917)
+		t.Errorf("Ssdev(data) returned %f but expected %f ", v, 3.0276503540974917)
 	}
 
-	v, _ = Pstd(data)
+	v, _ = Psdev(data)
 
 	if v != 2.8722813232690143 {
-		t.Errorf("SampleStandardDeviation(data) returned %f but expected %f ", v, 2.8722813232690143)
+		t.Errorf("Psdev returned %f but expected %f ", v, 2.8722813232690143)
 	}
 
 }

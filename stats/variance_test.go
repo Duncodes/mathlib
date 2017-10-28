@@ -10,6 +10,12 @@ func TestPopulationVarience(t *testing.T) {
 	if v != 8.25 {
 		t.Errorf("PopulationVariance(data) returned %f but expected %f ", v, 8.25)
 	}
+
+	v1, _ := Variance(data)
+
+	if v != v1 {
+		t.Errorf("PopulationVariance() is not Variance() ")
+	}
 }
 
 func TestSampleVarience(t *testing.T) {

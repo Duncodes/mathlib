@@ -47,19 +47,17 @@ func Min(d Data) (float64, error) {
 
 }
 
-func Sum(d Data) (sum float64) {
+func Sum(d Data) (sum float64, err error) {
 	if d.Len() == 0 {
-		return math.NaN()
+		return math.NaN(), EmptyInput
 
 	}
-
-	// Add em up
 	for _, n := range d {
 		sum += n
 
 	}
 
-	return sum
+	return sum, nil
 
 }
 

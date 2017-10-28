@@ -21,7 +21,7 @@ func StandardDeviation(d Data) (float64, error) {
 	return PopulationStandardDeviation(d)
 }
 
-// StandardDeviation computes the population StandardDeviation
+// PopulationStandardDeviation computes the population StandardDeviation
 func PopulationStandardDeviation(d Data) (float64, error) {
 	return std(d, false)
 }
@@ -31,17 +31,17 @@ func SampleStandardDeviation(d Data) (float64, error) {
 	return std(d, true)
 }
 
-// Sstd is a short for SampleStandardDeviation
-func Sstd(d Data) (float64, error) {
+// Ssdev is a short for SampleStandardDeviation
+func Ssdev(d Data) (float64, error) {
 	return SampleStandardDeviation(d)
 }
 
-// Pstd is a short for PopulationStandardDeviation
-func Pstd(d Data) (float64, error) {
+// Psdev is a short for PopulationStandardDeviation
+func Psdev(d Data) (float64, error) {
 	return PopulationStandardDeviation(d)
 }
 
-// Zscore self
+// Zscore this computes the z score using the population StandardDeviation
 func Zscore(d Data, x float64) (z float64, err error) {
 	m, err := Mean(d)
 
@@ -55,7 +55,7 @@ func Zscore(d Data, x float64) (z float64, err error) {
 	return
 }
 
-// SampleZscore self
+// SampleZscore this computes ths z score using the SampleStandardDeviation
 func SampleZscore(d Data, x float64) (z float64, err error) {
 	m, err := Mean(d)
 	s, _ := d.SampleStandardDeviation()
@@ -69,6 +69,7 @@ func SampleZscore(d Data, x float64) (z float64, err error) {
 
 }
 
+// SampleStandardError ....
 func SampleStandardError(d Data) (float64, error) {
 	s, _ := d.SampleStandardDeviation()
 	if d.Len() == 0 {

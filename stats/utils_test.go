@@ -1,7 +1,6 @@
 package stats
 
 import (
-	"log"
 	"testing"
 )
 
@@ -29,7 +28,7 @@ func TestSum(t *testing.T) {
 
 	data := Data{1, 2, 3, 4, 5, 6}
 
-	sum := Sum(data)
+	sum, _ := Sum(data)
 	if sum != 21 {
 		t.Errorf("Sum(data) returned %f but expected %f ", sum, 1)
 	}
@@ -43,5 +42,4 @@ func TestSample(t *testing.T) {
 	if (newsample.Len()) != 4 {
 		t.Errorf("Sample(data) failed")
 	}
-	log.Println(newsample)
 }

@@ -15,7 +15,7 @@ func main() {
 	variance, _ := data.SampleVariance()
 	std, _ := data.StandardDeviation()
 
-	s, _ := stats.Sstd(data)
+	s, _ := stats.Ssdev(data)
 
 	fmt.Println("Mean: ", mean)
 
@@ -45,4 +45,10 @@ func main() {
 	fmt.Println("Sum ", sum)
 	fmt.Println("Range", r)
 	fmt.Println("Std Error", sserror)
+
+	s1 := stats.Data{1, 2, 3, 4}
+	s2 := stats.Data{5, 6, 7, 8}
+
+	r, _ = stats.Correlation(s1, s2)
+	fmt.Println("Correlation ", r)
 }
