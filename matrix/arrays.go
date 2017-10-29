@@ -1,6 +1,9 @@
 package matrix
 
-func MatrixFromArray(data [][]float64) *Matrix {
+// NewFromArray creates  new  Matrix given a
+// 2d sclice
+//
+func NewFromArray(data [][]float64) *Matrix {
 	rows := len(data)
 
 	cols := len(data[0])
@@ -16,6 +19,7 @@ func MatrixFromArray(data [][]float64) *Matrix {
 	return m
 }
 
+// Array returns a 2d slice from a matrix
 func (m *Matrix) Array() [][]float64 {
 	rows, cols := m.Size()
 

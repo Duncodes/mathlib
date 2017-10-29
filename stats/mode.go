@@ -1,5 +1,6 @@
 package stats
 
+// Mode computes the mode of a []float64 values and returns a slice of the most frequent
 func Mode(i Data) (mode []float64, err error) {
 	l := i.Len()
 	if l == 0 {

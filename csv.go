@@ -6,6 +6,7 @@ import (
 	"strconv"
 )
 
+// ReadCSV reads all the data from csv file
 func ReadCSV(filename string) ([][]string, error) {
 	f, err := os.Open(filename)
 

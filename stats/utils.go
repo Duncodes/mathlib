@@ -14,6 +14,7 @@ func sortCopy(data Data) Data {
 	return c
 }
 
+// Max computes the maximum  value
 func Max(d Data) (float64, error) {
 	if d.Len() == 0 {
 		return math.NaN(), EmptyInput
@@ -30,6 +31,7 @@ func Max(d Data) (float64, error) {
 	return max, nil
 }
 
+// Min computes the minimum value
 func Min(d Data) (float64, error) {
 	if d.Len() == 0 {
 		return math.NaN(), EmptyInput
@@ -47,6 +49,7 @@ func Min(d Data) (float64, error) {
 
 }
 
+// Sum computes the sum
 func Sum(d Data) (sum float64, err error) {
 	if d.Len() == 0 {
 		return math.NaN(), EmptyInput
@@ -61,7 +64,7 @@ func Sum(d Data) (sum float64, err error) {
 
 }
 
-// Samples Data randomly and returns a new Data
+// Sample samples Data randomly and returns a new Data
 func Sample(d Data, lenght int) (Data, error) {
 	l := d.Len()
 	if l < lenght {

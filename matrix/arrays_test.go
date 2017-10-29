@@ -9,7 +9,7 @@ import (
 func TestMatrixFromArray(t *testing.T) {
 	assert := assert.New(t)
 
-	m := MatrixFromArray([][]float64{{1, 1}, {1, 2}})
+	m := NewFromArray([][]float64{{1, 1}, {1, 2}})
 
 	m2 := New(2, 2, 1, 1, 1, 2)
 
@@ -24,7 +24,7 @@ func TestArray(t *testing.T) {
 	a2 := [][]float64{{5, 6}, {4, 3}}
 	a3 := [][]float64{{9, 8, 1, 3}, {6, 5, 5, 3}, {7, 8, 2, 7}, {1, 3, 6, 7}}
 
-	m1 := MatrixFromArray(a1)
+	m1 := NewFromArray(a1)
 	m2 := New(2, 2, 5, 6, 4, 3)
 	m3 := New(4, 4, 9, 8, 1, 3, 6, 5, 5, 3, 7, 8, 2, 7, 1, 3, 6, 7)
 

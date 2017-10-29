@@ -9,16 +9,16 @@ func variance(data Data, sample bool) (variance float64, err error) {
 	if data.Len() == 0 {
 		return math.NaN(), EmptyInput
 	}
-	is_sample := 0
+	issample := 0
 	if sample {
-		is_sample = 1
+		issample = 1
 	}
 	mean, err := data.Mean()
 	for _, n := range data {
 		variance += math.Pow((float64(mean) - float64(n)), 2)
 	}
 
-	variance = variance / float64((data.Len())-is_sample)
+	variance = variance / float64((data.Len())-issample)
 	return
 }
 

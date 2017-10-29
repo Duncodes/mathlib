@@ -20,3 +20,11 @@ func ExampleZero() {
 
 	// Output: 0 0 0
 }
+
+// This creates a new Matrix from	[][]float64
+func ExampleNewFromArray() {
+	m := matrix.NewFromArray([][]float64{{1, 2}, {1, 2}})
+
+	fmt.Println(m)
+
+}
