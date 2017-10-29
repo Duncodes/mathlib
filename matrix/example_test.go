@@ -7,17 +7,16 @@ import (
 )
 
 func ExampleNew() {
-	m, err := matrix.New(2, 2, 4, 3, 3, 4)
-	if err != nil {
-		// handle error
-	}
+	m := matrix.New(1, 2, 4, 3)
 
 	fmt.Println(m)
-	//Output: [[4 3] [3 4]]
+	// Output: 4 3
+
 }
 
 func ExampleZero() {
-	m := matrix.Zero(2, 2)
+	m := matrix.Zero(1, 3)
 	fmt.Println(m)
-	// Output: [[0 0] [0 0]]
+
+	// Output: 0 0 0
 }
