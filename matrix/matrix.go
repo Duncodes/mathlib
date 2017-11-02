@@ -17,7 +17,7 @@ type Matrix struct {
 	data []float64
 }
 
-// String imprements a stringer interface
+// String for string matrix formating
 func (m *Matrix) String() string {
 	buffer := bytes.NewBuffer(nil)
 
