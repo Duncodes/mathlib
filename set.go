@@ -101,3 +101,7 @@ func (s Set) Difference(set Set) Set {
 
 	return diff
 }
+
+func (s Set) Cardinality() int {
+	return s.Len()
+}

@@ -25,6 +25,8 @@ func TestSet(t *testing.T) {
 	set.Remove(1)
 
 	assert.False(set.Contains(1), "Should be false, Should have been removed")
+
+	assert.Equal(set.Cardinality(), set.Len(), "Cardinality should be len")
 }
 
 func TestSetOperations(t *testing.T) {

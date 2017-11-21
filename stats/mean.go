@@ -7,7 +7,7 @@ func Mean(i Data) (float64, error) {
 	if i.Len() == 0 {
 		return math.NaN(), EmptyInput
 	}
-	sum, _ := i.Sum()
 
+	sum, _ := i.Sum()
 	return sum / float64(i.Len()), nil
 }
