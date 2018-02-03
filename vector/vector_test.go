@@ -42,4 +42,16 @@ func TestVector(t *testing.T) {
 	}
 
 	assert.Equal(sum, sum1, "Should be equal")
+
+	vec1 := Vector{1, 2}
+
+	new_vec := New(1, 2)
+
+	assert.Equal(vec1, new_vec, "Should be equal")
+
+	vec2 := vec1.Scalar(2)
+
+	vec3 := Vector{2, 4}
+
+	assert.Equal(vec2, vec3, "Should be Equal")
 }

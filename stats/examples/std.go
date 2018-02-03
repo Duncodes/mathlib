@@ -8,12 +8,12 @@ import (
 
 // This is something i always wanted to test why n-1 in SampleStandardDeviation.
 // Well this proves it. At avarange this is always a better eximation of the population StandardDeviation
-func Stest() {
+func smain() {
 	s := stats.Data{1, 2, 7, 2, 1, 2, 4, 6, 2, 8, 8, 8, 8, 8, 5, 7, 3, 2, 1, 5, 8, 9, 5, 6, 3, 4, 5, 6, 7, 7, 9, 4, 5, 6, 2, 3, 4, 1, 6, 4, 5, 6, 2, 3, 4, 1, 4, 4, 2, 3, 4, 2, 4, 6, 7, 4, 2, 5, 6, 2, 4, 7, 3, 4, 2, 4, 5, 3, 4, 2}
 
 	std, _ := s.PopulationStandardDeviation()
 
-	var inter int = 1000
+	var inter int = 1000000
 	var assamplesum float64 = 0
 	var aspopsum float64 = 0
 

@@ -12,6 +12,11 @@ var (
 // Vector represents a vector
 type Vector []float64
 
+// New ...
+func New(data ...float64) Vector {
+	return data
+}
+
 // Len returns the lenght of a vector
 func (v Vector) Len() int { return len(v) }
 
@@ -57,4 +62,15 @@ func (v Vector) Sub(addvector Vector) (sum Vector, err error) {
 	}
 
 	return
+}
+
+// Scalar ..
+func (v Vector) Scalar(number float64) Vector {
+	vec := make(Vector, len(v))
+
+	for i, n := range v {
+		vec[i] = n * number
+	}
+
+	return vec
 }
